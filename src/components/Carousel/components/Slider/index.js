@@ -26,10 +26,23 @@ const Container = styled.ul`
   .slick-next {
     right: 16px;
   }
+
+  .slick-slide {
+    transition: .8s;
+  }
+
+  .slick-slide:hover {
+    transform: scale(1.2);
+    order: 10;
+    z-index: 10;
+    margin: 0 2em;
+    transition: .5s;
+  }
 `;
 
 export const SliderItem = styled.li`
   margin-right: 16px;
+
   img {
     margin: 16px;
     width: 298px;
@@ -43,11 +56,12 @@ const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
       dots: false,
-      infinite: false,
+      accessibility: true,
+      infinite: true,
       speed: 300,
       centerMode: false,
       variableWidth: true,
-      adaptiveHeight: true,
+      adaptiveHeight: true
     }}
     >
       {children}
