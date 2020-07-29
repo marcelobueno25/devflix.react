@@ -38,43 +38,52 @@ function CadastroCategoria() {
       }}>
 
 
-        <div>
-          <label>
-            Nome da Categoria:
-        <input
-              type="text"
-              name="nome"
-              value={values.nome}
-              placeholder="Nome"
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <FormField
+          required="true"
+          label="Nome da Categoria"
+          type="text"
+          name="nome"
+          value={values.nome}
+          onChange={handleChange}
+        />
 
-        <div>
+        <FormField
+          label="Descrição:"
+          type="????"
+          name="descricao"
+          value={values.descricao}
+          onChange={handleChange}
+        />
+        {/* <div>
           <label>
             Descrição:
-        <textarea
-              type='text'
-              name='descricao'
+            <textarea
+              type="text"
               value={values.descricao}
-              placeholder="Descrição"
+              name="descricao"
               onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
-        <div>
+        <FormField
+          label="Cor"
+          type="color"
+          name="cor"
+          value={values.cor}
+          onChange={handleChange}
+        />
+        {/* <div>
           <label>
             Cor:
-        <input
-              type='color'
-              name='cor'
+            <input
+              type="color"
               value={values.cor}
+              name="cor"
               onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
         <button>
           Cadastrar
