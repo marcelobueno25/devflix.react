@@ -1,31 +1,25 @@
 import React from 'react';
-import Menu from './components/Menu';
-import dadosIniciais from './data/dados_iniciais.json';
-import BannerMain from './components/BannerMain';
-import Carousel from './components/Carousel';
-import Footer from './components/Footer';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+// Pages
+import Error404 from './pages/Error 404';
+import Home from './pages/Home';
+import Cadastro from './pages/Cadastro';
+import CadastroVideo from './pages/Cadastro/Video';
+import CadastroCategoria from './pages/Cadastro/Categoria';
+
 
 function App() {
   return (
-    <div style={{ background: "#414141" }}>
-      <Menu />
-
-      <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription={"O que é Front-end? Trabalhando na área os termos HTML,CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a vanessa!"}
-      />
-
-      {
-        dadosIniciais.categorias.map((event, index) => (
-          <Carousel key={dadosIniciais.categorias[index].titulo}
-            ignoreFirstVideo
-            category={dadosIniciais.categorias[index]}
-          />
-        ))
-      }
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/cadastro" exact component={Cadastro} />
+        <Route path="/cadastro/video" exact component={CadastroVideo} />
+        <Route path="/cadastro/categoria" exact component={CadastroCategoria} />
+        <Route component={Error404} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
