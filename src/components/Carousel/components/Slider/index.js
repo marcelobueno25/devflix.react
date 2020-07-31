@@ -2,7 +2,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
-
+import PropTypes from 'prop-types';
 
 const Container = styled.ul`
   padding: 0;
@@ -18,7 +18,7 @@ const Container = styled.ul`
     transform: initial;
     &:before {
       font-size: 30px;
-      color: ${props => props.color}
+      color: ${({ color }) => color}
     }
   }
   
@@ -53,24 +53,26 @@ export const SliderItem = styled.li`
   }
 `;
 
+const Slider = ({ color, children }) => (
+  <Container color={color}>
+    <SlickSlider {...{
+      dots: false,
+      accessibility: true,
+      infinite: true,
+      speed: 300,
+      centerMode: false,
+      variableWidth: true,
+      adaptiveHeight: true,
+    }}
+    >
+      {children}
+    </SlickSlider>
+  </Container>
+);
 
-const Slider = (props) => {
-  return (
-    <Container color={props.color}>
-      <SlickSlider {...{
-        dots: false,
-        accessibility: true,
-        infinite: true,
-        speed: 300,
-        centerMode: false,
-        variableWidth: true,
-        adaptiveHeight: true
-      }}
-      >
-        {props.children}
-      </SlickSlider>
-    </Container>
-  )
-}
+Slider.propTypes = {
+  children: PropTypes.node.isRequired,
+  color: PropTypes.string.isRequired,
+};
 
 export default Slider;
