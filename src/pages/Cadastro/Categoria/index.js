@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/template/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -11,30 +13,24 @@ function CadastroCategoria() {
     cor: '',
   };
   const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
 
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
+  const { values, handleChange, clearForm } = useForm(valoresIniciais);
 
-  function handleChange(infosDoEvento) {
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
+  // useEffect(() => {
+  //   const URL = window.location.hostname.includes('localhost')
+  //     ? 'https://localhost:8080/categorias'
+  //     : 'https://devflixalura.herokuapp.com/categorias';
+  //   fetch(URL)
+  //     .then(async (resp) => {
+  //       const resposta = await resp.json();
+  //       setCategorias(resposta);
+  //     });
+  // }, []);
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'https://localhost:8080/categorias'
-      : 'https://devflixalura.herokuapp.com/categorias';
-    fetch(URL)
-      .then(async (resp) => {
-        const resposta = await resp.json();
-        setCategorias(resposta);
+    categoriasRepository.getAllWithVideos()
+      .then((resp) => {
+        setCategorias(resp);
       });
   }, []);
 
@@ -48,7 +44,7 @@ function CadastroCategoria() {
       <form onSubmit={function handleSubmit(infosDoEvento) {
         infosDoEvento.preventDefault();
         setCategorias([...categorias, values]);
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
 
