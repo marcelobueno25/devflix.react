@@ -28,7 +28,9 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL = 'https://devflixalura.herokuapp.com/categorias';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'https://localhost:8080/categorias'
+      : 'https://devflixalura.herokuapp.com/categorias';
     fetch(URL)
       .then(async (resp) => {
         const resposta = await resp.json();
