@@ -29,10 +29,7 @@ function CadastroVideo() {
 
       <form onSubmit={(event) => {
         event.preventDefault();
-        const categoriaEscolhida = categorias.find((categoria) => {
-          return categoria.titulo === values.categoria;
-        });
-
+        const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === values.categoria);
 
         videosRepository.create({
           titulo: values.titulo,
@@ -68,14 +65,14 @@ function CadastroVideo() {
           suggestions={categoryTitles}
         />
 
-        <Button as="button" type="submit">
+        <Button as="button" type="submit" style={{ marginRight: '20px' }}>
           Cadastrar
         </Button>
-      </form>
 
-      <Link to="/cadastro/categoria">
-        Cadastrar Categoria
-      </Link>
+        <Link to="/cadastro/categoria">
+          Cadastrar Categoria
+        </Link>
+      </form>
     </PageDefault>
   );
 }
