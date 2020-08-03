@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import Lottie from 'react-lottie';
 import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import categoriasRepository from '../../repositories/categorias';
 import PageDefault from '../../components/template/PageDefault';
+import animationData from '../../lotties/20556-coffee-like.json';
 
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
@@ -21,7 +32,16 @@ function Home() {
   return (
     <PageDefault paddingAll={0}>
 
-      {dadosIniciais.length === 0 && (<div>Loading...</div>)}
+      {dadosIniciais.length === 0 && (
+        <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+          <Lottie
+            options={defaultOptions}
+            height={200}
+            width={200}
+          />
+          <span style={{ color: '#f9d69f', fontSize: '22px' }}>loading...</span>
+        </div>
+      )}
 
       {dadosIniciais.length >= 1 && (
         <>
