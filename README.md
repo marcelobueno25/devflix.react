@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DevFlix
 
-## Available Scripts
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-In the project directory, you can run:
+DevFlix é uma aplicação inspirada em serviços de streaming, desenvolvida para demonstrar conceitos de interface responsiva e consumo de APIs com React. A ideia é simular uma experiência semelhante à do Netflix, trazendo uma interface limpa e moderna.
 
-### `yarn start`
+## Sumário
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Sobre
+- Demonstração
+- Funcionalidades
+- Tecnologias Utilizadas
+- Pré-requisitos
+- Instalação e Execução
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Sobre
 
-### `yarn test`
+O DevFlix foi desenvolvido com o intuito de demonstrar as capacidades de criação de uma interface dinâmica e responsiva utilizando as melhores práticas do React. A aplicação permite a visualização de diferentes categorias de vídeos, similar a uma plataforma de streaming, e pode ser customizada conforme as necessidades de seus usuários.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A versão demo está disponível em:  
+[https://dev-flix-steel.vercel.app/](https://dev-flix-steel.vercel.app/)
 
-### `yarn build`
+## Funcionalidades
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Interface Responsiva:** Design moderno e adaptável a diversos dispositivos.
+- **Listagem de Conteúdos:** Exibição de vídeos e categorias de forma dinâmica.
+- **Navegação Intuitiva:** Menus e rotas para facilitar a navegação do usuário.
+- **Integração com APIs:** Exemplo de consumo de dados externos para popular a aplicação.
+- **Experiência Semelhante à do Netflix:** Layout e experiência focada em streaming.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tecnologias Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React:** Biblioteca principal para construção da interface do usuário.
+- **JavaScript (ES6+):** Linguagem utilizada para a lógica da aplicação.
+- **CSS/SCSS:** Estilização e layout responsivo.
+- **Vercel:** Plataforma para deploy e hospedagem da aplicação.
+- **Outras bibliotecas:** Dependências adicionais para roteamento, gerenciamento de estado e chamadas de APIs conforme a necessidade do projeto.
 
-### `yarn eject`
+## Pré-requisitos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Antes de executar o projeto localmente, certifique-se de ter instalado em sua máquina:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (versão recomendada LTS)
+- Git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Instalação e Execução
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Siga os passos abaixo para clonar e executar o DevFlix localmente:
 
-## Learn More
+1. **Clone o repositório:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+   ```bash
+   git clone https://github.com/marcelobueno25/devflix.react.git
+   cd devflix.react
+   npm install
+   npm start
